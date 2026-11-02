@@ -30,6 +30,44 @@ describe "Imperio Inca" {
     //assert.equals(1, caminoDelSapaInca.recursosProducidos(4))
     assert.equals(810, caminoDelSapaInca.recursosProducidos(10))
   }
+}
 
+describe "Imperio Inca PARTE 2" {
 
+  const Cusi = new HabitanteCampesino(tiempoDeEjercicio = 4 , energia = 100)
+  const Tupác = new HabitanteDeElite(energia = 200)
+  const siembraDePapa = new SiembraEnElValle(esfuerzo = 1.2)
+  const siembraDeMaiz = new SiembraEnTerrazas(esfuerzo = 1.5)
+  const rutaTamboCentral = new Mensaje()
+  const caminoDelSapaInca = new MensajeImperial()
+ 
+  test "Cusi es un campesino" {
+    assert.equals(180, siembraDePapa.recursosProducidos(4))
+    //Cusi.realizarTarea(siembraDePapa)
+    //assert.equals(82, Cusi.energiaActual())
+    Cusi.realizarTarea(rutaTamboCentral)
+    assert.equals(79, Cusi.energiaActual())
+  }
+
+  test "Cusi Vago" {
+    Cusi.nuevaEnergiaActual(15)
+    assert.throwsException({ Cusi.realizarTarea(siembraDePapa) }) 
+    assert.equals(15, Cusi.energiaActual())
+  }
+
+  
+  test "Tupác Elite" {
+    //Tupác.realizarTarea(siembraDeMaiz)
+    //assert.equals(111.25, Tupác.energiaActual())
+    Tupác.realizarTarea(caminoDelSapaInca)
+    assert.equals(137.5, Tupác.energiaActual())
+  }
+
+  /*
+  * Túpac es un habitante de elite de energía 200. 
+  Al practicar las tareas del punto anterior (trabajando 10 horas), su energía final será: 
+   * Siembra de maiz en terrazas: 200 - ((1125 / 12) - 5) = 111,25
+   * Camino del Sapa Inca: 200 - ((810 / 12) - 5) = 137,5
+
+   */
 }

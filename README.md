@@ -65,14 +65,17 @@ Mientras que recursos-producidos se resolvió en el punto anterior, el índice s
 
 ## Ayllus (Comunidades)
 
-Un Ayllu está compuesto por varias Colcas (zonas)), y de estas colcas se conocen las tareas que están habilitadas para realizarse en cada una. 
+
+Un Ayllu está compuesto por varias Colcas (zonas), y de estas colcas se conocen las tareas que están habilitadas para realizarse en cada una. 
 
 ### Requerimientos:
 
 Se pide resolver lo siguiente:
 
 * Conocer la mejor Colca de un Ayllu para un habitante: Es la Colca que más recursos le haría producir a ese habitante si este practicara todas las tareas asignadas a esa Colca una vez.
+
 * Conocer las Colcas suaves de un Ayllu para un habitante: Es el conjunto de Colcas que tienen al menos una tarea que le hace producir menos de 200 recursos al habitante.
+
 * Conocer las tareas más exigentes del Ayllu para un habitante: Es el conjunto formado por la tarea más exigente de cada Colca para ese habitante. La tarea más exigente es la que más recursos le hace producir al habitante.
 
 ### Casos de prueba
@@ -80,9 +83,14 @@ Se pide resolver lo siguiente:
 El Ayllu Real tiene dos Colcas: la Colca Agrícola (donde se realiza Siembra de Papa y Construcción de Andenes en el Valle Sagrado) y la Colca central (por donde pasan todos los mensajes).
 
 * La mejor Colca del Ayllu Real para Túpac es la Agrícola, ya que le hace producir 2000 recursos en total (con 10 horas de trabajo), mientras que la Monumental le hace producir 1380.
+
 * La mejor Colca del Ayllu Real para Cusi es la Agrícola, ya que le hace producir 855 recursos en total (con 4 horas de trabajo), mientras que la Monumental le hace producir 480.
+
 * Para Túpac no hay Colcas suaves en el Ayllu Real.
+
 * Para Cusi, el conjunto de Colcas suaves incluye únicamente a la Colca Agrícola, ya que allí puede realizar Siemba de Papa produciendo solo 180 recursos.
+
 * Para Túpac, las tareas más exigentes del Ayllu Real son Construcción de Andenes en el Valle Sagrado y Construcción del Templo del Sol.
+
 * Para Cusi, las tareas más exigentes del Ayllu Real son Construcción de Andenes en el Valle Sagrado y Construcción del Templo del Sol.
 

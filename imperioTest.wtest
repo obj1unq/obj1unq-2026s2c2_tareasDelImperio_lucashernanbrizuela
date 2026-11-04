@@ -1,5 +1,7 @@
 import imperio.*
 import habitantes.*
+import colcas.*
+
 
 describe "Imperio Inca" {
 
@@ -64,10 +66,45 @@ describe "Imperio Inca PARTE 2" {
   }
 
   /*
-  * Túpac es un habitante de elite de energía 200. 
-  Al practicar las tareas del punto anterior (trabajando 10 horas), su energía final será: 
-   * Siembra de maiz en terrazas: 200 - ((1125 / 12) - 5) = 111,25
-   * Camino del Sapa Inca: 200 - ((810 / 12) - 5) = 137,5
+   */
+}
 
+describe "Imperio Inca PARTE 3" {
+
+  const cusi = new HabitanteCampesino(tiempoDeEjercicio = 4 , energia = 100)
+  const tupác = new HabitanteDeElite(energia = 200)
+  const siembraDePapa = new SiembraEnElValle(esfuerzo = 1.2)
+  const siembraDeMaiz = new SiembraEnTerrazas(esfuerzo = 1.5)
+  const rutaTamboCentral = new Mensaje()
+  const caminoDelSapaInca = new MensajeImperial()
+
+  //const colcaAgrícola = new Colca(tareasHabilitadas = #{siembraDePapa, })
+
+  //ayllu.agregarColca(colca)
+
+ 
+  test "Cusi es un campesino" {
+    assert.equals(180, siembraDePapa.recursosProducidos(4))
+    //Cusi.realizarTarea(siembraDePapa)
+    //assert.equals(82, Cusi.energiaActual())
+    cusi.realizarTarea(rutaTamboCentral)
+    assert.equals(79, cusi.energiaActual())
+  }
+
+  test "Cusi Vago" {
+    cusi.nuevaEnergiaActual(15)
+    assert.throwsException({ cusi.realizarTarea(siembraDePapa) }) 
+    assert.equals(15, cusi.energiaActual())
+  }
+
+  
+  test "Tupác Elite" {
+    //Tupác.realizarTarea(siembraDeMaiz)
+    //assert.equals(111.25, Tupác.energiaActual())
+    tupác.realizarTarea(caminoDelSapaInca)
+    assert.equals(137.5, tupác.energiaActual())
+  }
+
+  /*
    */
 }
